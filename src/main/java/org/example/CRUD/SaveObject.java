@@ -18,7 +18,7 @@ public class SaveObject {
             //use ssesion object to save java object to database
 
             //create Student object
-            Student student=new Student("Samo","Kovacik","samuso.123@gmail.com");
+            Student student=new Student("Luky","Findor","findo@gmail.com");
             // start transaction
             session.beginTransaction();
             //save student object

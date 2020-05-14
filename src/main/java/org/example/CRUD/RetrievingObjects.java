@@ -21,15 +21,15 @@ public class RetrievingObjects {
             //start transaction
             session.beginTransaction();
             //getting students
-
             List<Student> students=session.createQuery("from models.Student ").list();
-            //display students
-            for (Student tempStudent:students) {
-                System.out.println("id:"+tempStudent.getId()+"  meno:"+tempStudent.getFirstname()+"  " +
-                        "priezvisko: "+tempStudent.getLastname()+"  email: "+tempStudent.getEmail());
+            //display all students
+            System.out.println("dislaying all students from db table:");
+            displayStudents(students);
 
-            }
-
+            //query specific lastname
+            System.out.println("dysplaying students with choosen lastname ");
+             List<Student> studentsS=session.createQuery("from models.Student e where e.lastname='Kovacik'").list();
+            displayStudents(studentsS);
             //commit transaction
             session.getTransaction().commit();
 
@@ -37,6 +37,13 @@ public class RetrievingObjects {
             factory.close();
         }
 
+    }
+
+    private static void displayStudents(List<Student> students) {
+        for (Student tempStudent:students) {
+            System.out.println("id:"+tempStudent.getId()+"  meno:"+tempStudent.getFirstname()+"  " +
+                    "priezvisko: "+tempStudent.getLastname()+"  email: "+tempStudent.getEmail());
+        }
     }
 
 }
