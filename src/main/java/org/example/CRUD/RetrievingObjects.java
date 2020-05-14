@@ -26,7 +26,7 @@ public class RetrievingObjects {
             //display students
             for (Student tempStudent:students) {
                 System.out.println("id:"+tempStudent.getId()+"  meno:"+tempStudent.getFirstname()+"  " +
-                        "priezvisko: "+tempStudent.getLastname());
+                        "priezvisko: "+tempStudent.getLastname()+"  email: "+tempStudent.getEmail());
 
             }
 
